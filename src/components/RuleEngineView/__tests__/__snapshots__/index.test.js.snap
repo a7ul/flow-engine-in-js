@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="RuleEngine-Container"
+>
+  <button
+    onClick={[Function]}
+  >
+    Lets rule !
+  </button>
+  obj = 
+  <input
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;

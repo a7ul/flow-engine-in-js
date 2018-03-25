@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  onClick={[Function]}
+  onToggle={[Function]}
+  style={
+    Object {
+      "boxShadow": "0px 0px 10px 0px lightgrey",
+      "cursor": "pointer",
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "row",
+      "fontFamily": "helvetica",
+      "fontWeight": "bold",
+      "padding": "10px",
+      "userSelect": "none",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexGrow": 1,
+        "justifyContent": "center",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "textAlign": "right",
+        "transform": "rotateZ(-180deg)",
+        "transition": "transform 0.25s",
+      }
+    }
+  >
+    ⌃
+  </div>
+</div>
+`;
