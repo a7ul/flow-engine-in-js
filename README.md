@@ -12,7 +12,7 @@ To start in dev mode:
 For building:
 
 1. yarn install
-2. yarn build
+2. PUBLIC_URL=. yarn build
 
 
 Yo! 🍺
