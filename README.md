@@ -15,4 +15,6 @@ For building:
 2. PUBLIC_URL=. yarn build
 
 
+Test Coverage: **95.59%**
+
 Yo! 🍺
