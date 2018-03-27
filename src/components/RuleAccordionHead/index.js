@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop } from '../../utils/helper';
+import { noop, getColorClass } from '../../utils/helper';
 import './style.scss';
-
-const getColorClass = (status) => {
-  if (status === true) {
-    return 'pass';
-  } else if (status === false) {
-    return 'fail';
-  }
-  return 'not-done';
-};
 
 const RuleAccordionHead = (props) => {
   const statusClass = getColorClass(props.ruleStatus);

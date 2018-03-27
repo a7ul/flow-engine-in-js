@@ -39,3 +39,12 @@ export const formatRulesForDisplay = (rules) => {
   const formattedRules = Object.keys(rules).map((eachRuleId) => ({ ...rules[eachRuleId] }));
   return formattedRules;
 };
+
+export const getColorClass = (status) => {
+  if (status === true) {
+    return 'pass';
+  } else if (status === false) {
+    return 'fail';
+  }
+  return 'not-done';
+};

@@ -1,0 +1,38 @@
+.rule-card-body{
+    background-color: darkgrey;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    padding: 10px 15px;
+    flex-direction: column;
+    font-weight: 500;
+  
+    .rule-body-title{
+        color: white;
+        padding: 5px 0;
+    }
+    .rule-body-function {
+        padding: 10px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: rgb(238, 235, 235);
+    }
+    .rule-body-bottom-half{
+        display: flex;
+        flex-direction: row;
+        align-self: stretch;
+        align-items: center;
+        justify-content: space-between;
+
+        .rule-next-id-container{
+            padding: 10px 0;
+        }
+        .rule-next-id-title{
+            color: white;
+            padding: 5px 0;
+        }
+        .rule-next-id-value{
+            padding: 5px;
+            background-color: rgb(238, 235, 235);        
+        }
+    }
+}

@@ -4,16 +4,22 @@ exports[`renders correctly 1`] = `
 <div
   className="rule-engine container"
 >
+  <div
+    className="input-container"
+  >
+    obj =
+    <input
+      className="input-text"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
   <button
+    className="run-button"
     onClick={[Function]}
   >
     Lets rule !
   </button>
-  obj = 
-  <input
-    onChange={[Function]}
-    type="text"
-    value=""
-  />
 </div>
 `;

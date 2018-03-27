@@ -8,8 +8,11 @@ const RuleEngine = (props) => {
   const formattedRules = formatRulesForDisplay(props.ruleResults);
   return (
     <div className="rule-engine container">
-      <button onClick={props.onRunRuleClick}>Lets rule !</button>
-      obj = <input type="text" onChange={props.onTextChange} value={props.inputText} />
+      <div className="input-container">
+        obj =
+        <input className="input-text" type="text" onChange={props.onTextChange} value={props.inputText} />
+      </div>
+      <button className="run-button" onClick={props.onRunRuleClick}>Lets rule !</button>
       {
         formattedRules.map((eachRule) => {
           const { id, title, step, status, body, true_id, false_id } = eachRule; // eslint-disable-line camelcase

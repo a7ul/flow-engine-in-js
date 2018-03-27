@@ -1,9 +1,39 @@
 .rule-engine{
     &.container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         padding: 10px;
+        max-width : 400px;
+        min-width: 200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .input-container{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 20px;
+     font-weight: bold;
+    }
+    .run-button{
+        display: block;
+        margin: 5px auto;
+        background: white;
+        border: 1px solid;
+        border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 15px;
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+        &:hover{
+            background: lightcoral;
+        }
+    }
+    .input-text{
+      height: 30px;
+      border: 2px solid black;
+      border-radius: 3px;
+      margin-left: 5px;
+      font-size: 14px;
+      padding: 0 5px;
     }
 }
