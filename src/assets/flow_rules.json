@@ -1,30 +1,30 @@
 {
   "1": {
-    "title": "Is value truthy ?",
-    "body": "(obj)=>true",
+    "title": "Obj should have a truthy value property ?",
+    "body": "(obj)=>obj.value",
     "true_id": "2",
     "false_id": "5"
   },
   "2": {
-    "title": "Is value truthy ?",
-    "body": "(obj)=>!!obj",
+    "title": "Is value property a int ?",
+    "body": "(obj)=>Number.isInteger(obj.value)",
     "true_id": "3",
     "false_id": "5"
   },
   "3": {
-    "title": "Is value truthy ?",
-    "body": "(obj)=>!!obj",
+    "title": "Is value greater than 5 ?",
+    "body": "(obj)=>obj.value > 5",
     "true_id": "4",
     "false_id": "5"
   },
   "4": {
-    "title": "Is value truthy ?",
-    "body": "(obj)=>!!obj",
+    "title": "Is value less than 10 ?",
+    "body": "(obj)=>obj.value < 10",
     "true_id": "5",
     "false_id": "5"
   },
   "5": {
-    "title": "Is value truthy ?",
+    "title": "This is always false",
     "body": "(obj)=>false",
     "true_id": null,
     "false_id": null

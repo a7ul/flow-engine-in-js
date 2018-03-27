@@ -3,19 +3,21 @@ import RuleEngineView from '../../components/RuleEngineView';
 import rules from '../../assets/flow_rules.json';
 import { prepareRules, ruleExecutor } from '../../utils/helper';
 
+const initialState = {
+  ruleResults: prepareRules(rules),
+  inputText: ''
+};
+
 class RuleEngine extends React.Component {
-  state = {
-    ruleResults: prepareRules(rules),
-    inputText: ''
-  }
+  state = { ...initialState };
   onTextChange = (evt) => {
-    this.setState({ inputText: evt.target.value });
+    this.setState({ inputText: evt.target.value, ruleResults: initialState.ruleResults });
   }
   onExecuteRule = () => {
-    const { ruleResults, inputText } = this.state;
+    const { inputText } = this.state;
     try {
       const testObject = JSON.parse(inputText);
-      const nonExecutedRules = ruleResults;
+      const nonExecutedRules = initialState.ruleResults;
       this.setState({ ruleResults: ruleExecutor(nonExecutedRules, testObject) });
     } catch (err) {
       console.log(err); // eslint-disable-line no-console

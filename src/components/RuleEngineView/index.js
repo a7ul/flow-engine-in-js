@@ -21,7 +21,7 @@ const RuleEngine = (props) => {
               key={id}
               ruleId={id}
               title={title}
-              status={status}
+              status={status ? Boolean(status) : status}
               body={body}
               trueID={true_id}// eslint-disable-line camelcase
               falseID={false_id}// eslint-disable-line camelcase

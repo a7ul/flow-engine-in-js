@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RuleEngine from '../';
-import { ruleExecutor } from '../../../utils/helper';
+import { ruleExecutor, prepareRules } from '../../../utils/helper';
+import rules from '../../../assets/flow_rules.json';
+
+jest.mock('../../../assets/flow_rules.json', () => ({
+  1: { body: '(obj)=>!!obj', false_id: '5', status: true, step: 1, title: 'Is value truthy ?', true_id: '3' },
+  3: { body: '(obj)=>true', false_id: '5', status: true, step: 2, title: 'Always true ', true_id: '5' },
+  5: { body: '(obj)=>false', false_id: null, status: false, step: 3, title: 'Always false ', true_id: null } }
+));
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -23,11 +30,7 @@ describe('RuleEngine', () => {
   describe('onExecuteRule: ', () => {
     it('executes the rules on click of the execute button', () => {
       const wrapper = Enzyme.shallow(<RuleEngine />);
-      const preparedRules = {
-        1: { title: 'Is value truthy ?', body: '(obj)=>!!obj', true_id: '3', false_id: '5', status: null, step: null },
-        3: { title: 'Always true ', body: '(obj)=>true', true_id: '5', false_id: '5', status: null, step: null },
-        5: { title: 'Always false ', body: '(obj)=>false', true_id: null, false_id: null, status: null, step: null }
-      };
+      const preparedRules = prepareRules(rules);
       const instance = wrapper.instance();
       instance.state = {
         inputText: '{"test":1}',

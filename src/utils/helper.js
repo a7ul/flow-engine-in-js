@@ -11,7 +11,7 @@ export const prepareRules = (rules) => {
 export const testRule = (rule, testObject) => {
   const { body } = rule;
   const testfn = eval(body); // eslint-disable-line no-eval
-  return testfn(testObject);
+  return Boolean(testfn(testObject));
 };
 
 export const ruleExecutor = (rules, testObject) => {

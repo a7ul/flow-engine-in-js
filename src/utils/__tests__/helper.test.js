@@ -1,4 +1,4 @@
-import { prepareRules, testRule, formatRulesForDisplay, ruleExecutor } from '../helper';
+import { prepareRules, testRule, formatRulesForDisplay, ruleExecutor, getColorClass } from '../helper';
 
 describe('Helper utilty', () => {
   describe('Prepare rules: prepares the rules by adding few extra runtime variables', () => {
@@ -59,6 +59,16 @@ describe('Helper utilty', () => {
       };
       const testObject = { test: 1 };
       expect(() => ruleExecutor(rules, testObject)).toThrow('Circular execution error');
+    });
+  });
+  describe('getColorClass:', () => {
+    it('should get the right class for the status value', () => {
+      expect(getColorClass(true)).toBe('pass');
+      expect(getColorClass(false)).toBe('fail');
+      expect(getColorClass(undefined)).toBe('not-done');
+      expect(getColorClass(null)).toBe('not-done');
+      expect(getColorClass('abc')).toBe('not-done');
+      expect(getColorClass(123)).toBe('not-done');
     });
   });
 });
