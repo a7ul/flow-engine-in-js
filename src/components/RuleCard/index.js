@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Accordion from 'react-super-accordion';
+import RuleAccordionHead from '../RuleAccordionHead';
 
 const RuleCard = (props) => (
-  <Accordion headText={props.title}>
+  <Accordion headComponent={(accodionProps) =>
+    <RuleAccordionHead ruleId={props.ruleId} ruleStatus={props.status} step={props.step} title={props.title} {...accodionProps} />
+  }
+  >
     <div>
       <div>
         {props.body}
-      </div>
-      <div>
-        {JSON.stringify(props.status)}
       </div>
       <div>
         {props.trueID}
@@ -17,13 +18,11 @@ const RuleCard = (props) => (
       <div>
         {props.falseID}
       </div>
-      <div>
-        {props.step}
-      </div>
     </div>
   </Accordion>
 );
 RuleCard.defaultProps = {
+  ruleId: null,
   title: null,
   status: null,
   body: null,
@@ -32,6 +31,7 @@ RuleCard.defaultProps = {
   step: null
 };
 RuleCard.propTypes = {
+  ruleId: PropTypes.string,
   title: PropTypes.string,
   status: PropTypes.oneOf([true, false, null]),
   body: PropTypes.string,

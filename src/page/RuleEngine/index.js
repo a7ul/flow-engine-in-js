@@ -18,7 +18,8 @@ class RuleEngine extends React.Component {
       const nonExecutedRules = ruleResults;
       this.setState({ ruleResults: ruleExecutor(nonExecutedRules, testObject) });
     } catch (err) {
-      console.log(err);
+      console.log(err); // eslint-disable-line no-console
+      alert(err.message); // eslint-disable-line no-alert
     }
   }
   render() {

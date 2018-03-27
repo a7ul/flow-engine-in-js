@@ -8,7 +8,7 @@
   "2": {
     "title": "Is value truthy ?",
     "body": "(obj)=>!!obj",
-    "true_id": "1",
+    "true_id": "3",
     "false_id": "5"
   },
   "3": {

@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="RuleEngine-Container"
+  className="rule-engine container"
 >
   <button
     onClick={[Function]}

@@ -1,0 +1,50 @@
+.rule-accordion-head{
+    &.container{
+        max-width : 400px;
+        min-width: 200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        color: white;
+        cursor: pointer;
+        margin: 10px 0;
+        padding-right: 10px;
+        user-select: none;
+        font-weight: bold;
+    }
+    &.rounded-all-corners{
+      border-radius: 5px;
+    }
+    &.pass{
+        background-color: rgb(119, 170, 0);
+    }
+    &.fail{
+        background-color: rgb(227, 7, 20);
+    }
+    &.not-done{
+        background-color: grey;
+    }
+    .rule-id{
+        padding: 10px;
+        &.fail{
+          background-color: rgb(250, 8, 24);
+        }
+        &.pass{
+            background-color: rgb(146, 207, 3);
+        }
+        &.not-done{
+            background-color: lightgrey;
+        }
+    }
+    .rule-step{
+      border-radius: 50%;
+      padding: 0 5px;
+      color: black;
+      font-size: 12px;
+      background-color: white;
+    }
+}

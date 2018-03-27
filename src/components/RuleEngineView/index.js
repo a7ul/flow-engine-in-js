@@ -7,14 +7,23 @@ import { noop, formatRulesForDisplay } from '../../utils/helper';
 const RuleEngine = (props) => {
   const formattedRules = formatRulesForDisplay(props.ruleResults);
   return (
-    <div className="RuleEngine-Container">
+    <div className="rule-engine container">
       <button onClick={props.onRunRuleClick}>Lets rule !</button>
       obj = <input type="text" onChange={props.onTextChange} value={props.inputText} />
       {
         formattedRules.map((eachRule) => {
           const { id, title, step, status, body, true_id, false_id } = eachRule; // eslint-disable-line camelcase
           return (
-            <RuleCard key={id} title={title} status={status} body={body} trueID={true_id} falseID={false_id} step={step} /> // eslint-disable-line camelcase
+            <RuleCard
+              key={id}
+              ruleId={id}
+              title={title}
+              status={status}
+              body={body}
+              trueID={true_id}// eslint-disable-line camelcase
+              falseID={false_id}// eslint-disable-line camelcase
+              step={step}
+            />
           );
         })
       }
